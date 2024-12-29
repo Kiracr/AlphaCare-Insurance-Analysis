@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+     branches:
+       - main
+  pull_request:
+     branches:
+       - main
+jobs:
+  bulid:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-pyhton@v4
+        with: 
+           python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requerments.txt   
+
+        
+
+           
+
+
+  
